@@ -1,5 +1,8 @@
 
-package DAO;
+package quanly.khachsan.quanlykhachsan.DAO;
+
+import quanly.khachsan.quanlykhachsan.connection.MyConnection;
+import quanly.khachsan.quanlykhachsan.model.KhachHang;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,8 +12,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import connection.MyConnection;
-import model.KhachHang;
 
 public class KhachHangDAO {
 	private Connection connection;

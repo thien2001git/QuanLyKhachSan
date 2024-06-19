@@ -1,4 +1,4 @@
-package model;
+package quanly.khachsan.quanlykhachsan.model;
 
 public class LoaiPhong {
 	private String maLoaiPhong;

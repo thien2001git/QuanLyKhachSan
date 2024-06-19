@@ -1,8 +1,8 @@
-package controller;
+package quanly.khachsan.quanlykhachsan.controller;
 
-import java.io.IOException;
-import java.sql.Date;
-import java.util.List;
+import quanly.khachsan.quanlykhachsan.model.ChiTietHoaDon;
+import quanly.khachsan.quanlykhachsan.model.HoaDon;
+import quanly.khachsan.quanlykhachsan.service.HoaDonService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,10 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
-import model.ChiTietHoaDon;
-import model.HoaDon;
-import service.HoaDonService;
+import java.io.IOException;
+import java.sql.Date;
+import java.util.List;
 
 @WebServlet("/hoadon")
 public class HoaDonServlet extends HttpServlet {

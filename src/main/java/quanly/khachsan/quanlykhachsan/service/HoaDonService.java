@@ -1,11 +1,12 @@
-package service;
+package quanly.khachsan.quanlykhachsan.service;
+
+import quanly.khachsan.quanlykhachsan.DAO.HoaDonDAO;
+import quanly.khachsan.quanlykhachsan.model.ChiTietHoaDon;
+import quanly.khachsan.quanlykhachsan.model.HoaDon;
 
 import java.sql.Date;
 import java.util.List;
 
-import DAO.HoaDonDAO;
-import model.ChiTietHoaDon;
-import model.HoaDon;
 
 public class HoaDonService {
 	private HoaDonDAO hoaDonDAO;

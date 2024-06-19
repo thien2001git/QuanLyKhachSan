@@ -1,9 +1,9 @@
-package service;
+package quanly.khachsan.quanlykhachsan.service;
+
+import quanly.khachsan.quanlykhachsan.DAO.PhieuThuePhongDAO;
+import quanly.khachsan.quanlykhachsan.model.PhieuThuePhong;
 
 import java.util.List;
-
-import DAO.PhieuThuePhongDAO;
-import model.PhieuThuePhong;
 
 public class PhieuThuePhongService {
 	private PhieuThuePhongDAO phieuThuePhongDAO;

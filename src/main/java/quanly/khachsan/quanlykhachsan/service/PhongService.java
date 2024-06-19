@@ -1,9 +1,9 @@
-package service;
+package quanly.khachsan.quanlykhachsan.service;
+
+import quanly.khachsan.quanlykhachsan.DAO.PhongDAO;
+import quanly.khachsan.quanlykhachsan.model.Phong;
 
 import java.util.List;
-
-import DAO.PhongDAO;
-import model.Phong;
 
 public class PhongService {
 	private PhongDAO phongDAO;

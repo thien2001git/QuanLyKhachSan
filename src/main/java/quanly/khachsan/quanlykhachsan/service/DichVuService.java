@@ -1,9 +1,9 @@
-package service;
+package quanly.khachsan.quanlykhachsan.service;
+
+import quanly.khachsan.quanlykhachsan.DAO.DichVuDAO;
+import quanly.khachsan.quanlykhachsan.model.DichVu;
 
 import java.util.List;
-
-import DAO.DichVuDAO;
-import model.DichVu;
 
 public class DichVuService {
 	private DichVuDAO dichVuDAO;

@@ -1,16 +1,12 @@
-package DAO;
+package quanly.khachsan.quanlykhachsan.DAO;
 
-import java.sql.Connection;
-import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import quanly.khachsan.quanlykhachsan.connection.MyConnection;
+import quanly.khachsan.quanlykhachsan.model.ChiTietHoaDon;
+import quanly.khachsan.quanlykhachsan.model.HoaDon;
+
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-
-import connection.MyConnection;
-import model.ChiTietHoaDon;
-import model.HoaDon;
 
 public class HoaDonDAO {
 
@@ -18,8 +14,8 @@ public class HoaDonDAO {
 		List<HoaDon> hoaDons = new ArrayList<>();
 		String query = "SELECT * FROM HoaDon";
 		try (Connection connection = MyConnection.getConnection();
-				PreparedStatement preparedStatement = connection.prepareStatement(query);
-				ResultSet resultSet = preparedStatement.executeQuery()) {
+             PreparedStatement preparedStatement = connection.prepareStatement(query);
+             ResultSet resultSet = preparedStatement.executeQuery()) {
 
 			while (resultSet.next()) {
 				HoaDon hoaDon = new HoaDon();

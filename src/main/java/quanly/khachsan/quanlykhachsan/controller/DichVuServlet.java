@@ -1,4 +1,7 @@
-package controller;
+package quanly.khachsan.quanlykhachsan.controller;
+
+import quanly.khachsan.quanlykhachsan.model.DichVu;
+import quanly.khachsan.quanlykhachsan.service.DichVuService;
 
 import java.io.IOException;
 import java.util.List;
@@ -10,8 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import model.DichVu;
-import service.DichVuService;
+
 
 @WebServlet("/dichvu")
 public class DichVuServlet extends HttpServlet {

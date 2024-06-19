@@ -1,9 +1,9 @@
-package service;
+package quanly.khachsan.quanlykhachsan.service;
+
+import quanly.khachsan.quanlykhachsan.DAO.LoaiPhongDAO;
+import quanly.khachsan.quanlykhachsan.model.LoaiPhong;
 
 import java.util.List;
-
-import DAO.LoaiPhongDAO;
-import model.LoaiPhong;
 
 public class LoaiPhongService {
 	private LoaiPhongDAO loaiPhongDAO;

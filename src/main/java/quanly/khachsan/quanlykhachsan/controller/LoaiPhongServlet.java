@@ -1,4 +1,7 @@
-package controller;
+package quanly.khachsan.quanlykhachsan.controller;
+
+import quanly.khachsan.quanlykhachsan.model.LoaiPhong;
+import quanly.khachsan.quanlykhachsan.service.LoaiPhongService;
 
 import java.io.IOException;
 import java.util.List;
@@ -9,9 +12,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
-import model.LoaiPhong;
-import service.LoaiPhongService;
 
 /**
  * Servlet implementation class LoaiPhongServlet

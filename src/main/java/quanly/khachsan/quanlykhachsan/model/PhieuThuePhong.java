@@ -1,4 +1,4 @@
-package model;
+package quanly.khachsan.quanlykhachsan.model;
 
 import java.sql.Date;
 

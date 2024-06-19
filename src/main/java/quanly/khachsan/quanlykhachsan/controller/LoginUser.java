@@ -1,4 +1,7 @@
-package controller;
+package quanly.khachsan.quanlykhachsan.controller;
+
+import quanly.khachsan.quanlykhachsan.model.KhachHang;
+import quanly.khachsan.quanlykhachsan.service.KhachHangService;
 
 import java.io.IOException;
 
@@ -8,9 +11,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
-import model.KhachHang;
-import service.KhachHangService;
 
 /**
  * Servlet implementation class LoginUser

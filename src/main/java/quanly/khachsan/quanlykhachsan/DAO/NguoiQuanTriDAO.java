@@ -1,12 +1,12 @@
-package DAO;
+package quanly.khachsan.quanlykhachsan.DAO;
+
+import quanly.khachsan.quanlykhachsan.connection.MyConnection;
+import quanly.khachsan.quanlykhachsan.model.NguoiQuanTri;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
-import connection.MyConnection;
-import model.NguoiQuanTri;
 
 public class NguoiQuanTriDAO {
 	public NguoiQuanTri login(String taiKhoan, String matKhau) {

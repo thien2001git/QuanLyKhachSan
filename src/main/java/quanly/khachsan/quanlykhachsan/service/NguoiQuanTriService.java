@@ -1,7 +1,8 @@
-package service;
+package quanly.khachsan.quanlykhachsan.service;
 
-import DAO.NguoiQuanTriDAO;
-import model.NguoiQuanTri;
+
+import quanly.khachsan.quanlykhachsan.DAO.NguoiQuanTriDAO;
+import quanly.khachsan.quanlykhachsan.model.NguoiQuanTri;
 
 public class NguoiQuanTriService {
 	private NguoiQuanTriDAO nguoiQuanTriDAO = new NguoiQuanTriDAO();

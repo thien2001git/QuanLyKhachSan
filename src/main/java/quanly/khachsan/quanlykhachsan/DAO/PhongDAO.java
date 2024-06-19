@@ -1,4 +1,7 @@
-package DAO;
+package quanly.khachsan.quanlykhachsan.DAO;
+
+import quanly.khachsan.quanlykhachsan.connection.MyConnection;
+import quanly.khachsan.quanlykhachsan.model.Phong;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,9 +9,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
-import connection.MyConnection;
-import model.Phong;
 
 public class PhongDAO {
 	private Connection connection;

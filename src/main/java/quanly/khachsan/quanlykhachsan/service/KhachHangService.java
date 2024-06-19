@@ -1,11 +1,11 @@
 
-package service;
+package quanly.khachsan.quanlykhachsan.service;
+
+import quanly.khachsan.quanlykhachsan.DAO.KhachHangDAO;
+import quanly.khachsan.quanlykhachsan.model.KhachHang;
 
 import java.sql.SQLException;
 import java.util.List;
-
-import DAO.KhachHangDAO;
-import model.KhachHang;
 
 public class KhachHangService {
 	private KhachHangDAO khachHangDAO;

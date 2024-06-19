@@ -1,7 +1,7 @@
-package controller;
+package quanly.khachsan.quanlykhachsan.controller;
 
-import java.io.IOException;
-import java.util.List;
+import quanly.khachsan.quanlykhachsan.model.ChiTietDichVu;
+import quanly.khachsan.quanlykhachsan.service.ChiTietDichVuService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,9 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
-import model.ChiTietDichVu;
-import service.ChiTietDichVuService;
+import java.io.IOException;
+import java.util.List;
 
 @WebServlet("/chitietdichvu")
 public class ChiTietDichVuServlet extends HttpServlet {

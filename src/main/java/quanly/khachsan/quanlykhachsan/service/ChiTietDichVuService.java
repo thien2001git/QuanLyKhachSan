@@ -1,9 +1,8 @@
-package service;
+package quanly.khachsan.quanlykhachsan.service;
 
 import java.util.List;
-
-import DAO.ChiTietDichVuDAO;
-import model.ChiTietDichVu;
+import quanly.khachsan.quanlykhachsan.DAO.ChiTietDichVuDAO;
+import quanly.khachsan.quanlykhachsan.model.ChiTietDichVu;
 
 public class ChiTietDichVuService {
 	private ChiTietDichVuDAO chiTietDichVuDAO;

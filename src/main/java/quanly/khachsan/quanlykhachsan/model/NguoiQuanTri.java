@@ -1,4 +1,4 @@
-package model;
+package quanly.khachsan.quanlykhachsan.model;
 
 public class NguoiQuanTri {
 	private String taiKhoan;

@@ -1,4 +1,7 @@
-package DAO;
+package quanly.khachsan.quanlykhachsan.DAO;
+
+import quanly.khachsan.quanlykhachsan.connection.MyConnection;
+import quanly.khachsan.quanlykhachsan.model.LoaiPhong;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,16 +10,14 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import connection.MyConnection;
-import model.LoaiPhong;
 
 public class LoaiPhongDAO {
 	public List<LoaiPhong> getAllLoaiPhong() {
 		List<LoaiPhong> loaiPhongs = new ArrayList<>();
 		String query = "SELECT * FROM LoaiPhong";
 		try (Connection connection = MyConnection.getConnection();
-				PreparedStatement preparedStatement = connection.prepareStatement(query);
-				ResultSet resultSet = preparedStatement.executeQuery()) {
+             PreparedStatement preparedStatement = connection.prepareStatement(query);
+             ResultSet resultSet = preparedStatement.executeQuery()) {
 
 			while (resultSet.next()) {
 				LoaiPhong loaiPhong = new LoaiPhong();

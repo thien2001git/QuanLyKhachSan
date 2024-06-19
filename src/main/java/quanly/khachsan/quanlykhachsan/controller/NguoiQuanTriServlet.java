@@ -1,6 +1,7 @@
-package controller;
+package quanly.khachsan.quanlykhachsan.controller;
 
-import java.io.IOException;
+import quanly.khachsan.quanlykhachsan.model.NguoiQuanTri;
+import quanly.khachsan.quanlykhachsan.service.NguoiQuanTriService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,9 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
-import model.NguoiQuanTri;
-import service.NguoiQuanTriService;
+import java.io.IOException;
 
 /**
  * Servlet implementation class NguoiQuanTriServlet
