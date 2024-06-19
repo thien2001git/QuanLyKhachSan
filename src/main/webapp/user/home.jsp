@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page import="model.KhachHang" %>
+<%@ page import="quanly.khachsan.quanlykhachsan.model.KhachHang" %>
 <%@ page import="java.util.Optional" %>
 <%@ page import="javax.servlet.http.HttpSession" %>
 <%@ page import="java.io.*,java.util.*,javax.servlet.*" %>
