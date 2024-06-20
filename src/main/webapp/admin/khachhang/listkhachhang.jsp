@@ -9,43 +9,55 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container mt-5">
-        <h2 class="mb-4">Danh sách khách hàng</h2>
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>Mã Khách Hàng</th>
-                    <th>Tài Khoản</th>
-                    <th>Tên Khách Hàng</th>
-                    <th>Giới Tính</th>
-                    <th>CMND</th>
-                    <th>Địa Chỉ</th>
-                    <th>Email</th>
-                    <th>Số Điện Thoại</th>
-                    <th>Hành Động</th>
-                </tr>
-            </thead>
-            <tbody>
-                <c:forEach var="khachHang" items="${khachHangList}">
+<jsp:include page="/admin/header.jsp"/>
+<div class="container-fluid">
+    <div class="row mt-4">
+        <div class="col-md-2 mb-4">
+            <jsp:include page="/admin/nav.jsp"/>
+        </div>
+        <div class="col-md-10 mb-4">
+            <div class="container mt-5">
+                <h2 class="mb-4">Danh sách khách hàng</h2>
+                <table class="table table-bordered">
+                    <thead>
                     <tr>
-                        <td>${khachHang.maKhachHang}</td>
-                        <td>${khachHang.taiKhoan}</td>
-                        <td>${khachHang.tenKhachHang}</td>
-                        <td>${khachHang.gioiTinh ? "Nam" : "Nữ"}</td>
-                        <td>${khachHang.cmnd}</td>
-                        <td>${khachHang.diaChi}</td>
-                        <td>${khachHang.email}</td>
-                        <td>${khachHang.soDienThoai}</td>
-                        <td>
-                            <a href="${pageContext.request.contextPath}/khachhang?action=edit&maKhachHang=${khachHang.maKhachHang}" class="btn btn-primary">Sửa</a>
-                        </td>
+                        <th>Mã Khách Hàng</th>
+                        <th>Tài Khoản</th>
+                        <th>Tên Khách Hàng</th>
+                        <th>Giới Tính</th>
+                        <th>CMND</th>
+                        <th>Địa Chỉ</th>
+                        <th>Email</th>
+                        <th>Số Điện Thoại</th>
+                        <th>Hành Động</th>
                     </tr>
-                </c:forEach>
-            </tbody>
-        </table>
-		<a href="admin/dashboard.jsp" class="btn btn-secondary">Quay lại </a>
-        
+                    </thead>
+                    <tbody>
+                    <c:forEach var="khachHang" items="${khachHangList}">
+                        <tr>
+                            <td>${khachHang.maKhachHang}</td>
+                            <td>${khachHang.taiKhoan}</td>
+                            <td>${khachHang.tenKhachHang}</td>
+                            <td>${khachHang.gioiTinh ? "Nam" : "Nữ"}</td>
+                            <td>${khachHang.cmnd}</td>
+                            <td>${khachHang.diaChi}</td>
+                            <td>${khachHang.email}</td>
+                            <td>${khachHang.soDienThoai}</td>
+                            <td>
+                                <a href="${pageContext.request.contextPath}/khachhang?action=edit&maKhachHang=${khachHang.maKhachHang}"
+                                   class="btn btn-primary">Sửa</a>
+                            </td>
+                        </tr>
+                    </c:forEach>
+                    </tbody>
+                </table>
+                <a href="admin/dashboard.jsp" class="btn btn-secondary">Quay lại </a>
+
+            </div>
+        </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

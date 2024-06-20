@@ -7,125 +7,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .my-btn{
-            cursor:pointer;
-            position:relative;
-            padding:10px 20px;
-            background:white;
-            font-size:28px;
-            border-top-right-radius:10px;
-            border-bottom-left-radius:10px;
-            transition:all 1s;
-            &:after,&:before{
-                content:" ";
-                width:10px;
-                height:10px;
-                position:absolute;
-                border :0px solid #fff;
-                transition:all 1s;
-            }
-            &:after{
-                top:-1px;
-                left:-1px;
-                border-top:5px solid crimson;
-                border-left:5px solid crimson;
-            }
-            &:before{
-                bottom:-1px;
-                right:-1px;
-                border-bottom:5px solid black;
-                border-right:5px solid black;
-            }
-            &:hover{
-                border-top-right-radius:0px;
-                border-bottom-left-radius:0px;
-            // background:rgba(0,0,0,.5);
-            // color:white;
-                &:before,&:after{
 
-                    width:100%;
-                    height:100%;
-                // border-color:white;
-                }
-            }
-        }
-    </style>
 </head>
 <body class="bg-light">
 
-<div class="container-fluid" style="margin: 0px; padding: 0px">
-    <div class="d-flex flex-row justify-content-between align-items-center bg-dark text-light p-2">
-        <div class="d-flex flex-row align-items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                 class="bi bi-person-circle" viewBox="0 0 16 16">
-                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-                <path fill-rule="evenodd"
-                      d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
-            </svg>
+<jsp:include page="header.jsp"/>
+<div class="container-fluid">
 
-            <b>Admin <c:out value="${adminUsername}"/></b>
+    <div class="row mt-4">
+        <div class="col-md-2 mb-4">
+            <jsp:include page="nav.jsp"/>
         </div>
-        <div>
-            <a href="${pageContext.request.contextPath}/logout" class="btn btn-danger" title="Đăng xuất"
-               data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Đăng xuất">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                     class="bi bi-box-arrow-right" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd"
-                          d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
-                    <path fill-rule="evenodd"
-                          d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
-                </svg>
-            </a>
-        </div>
-    </div>
-</div>
-<div class="container">
-
-
-    <div class="row mt-3">
-        <a href="${pageContext.request.contextPath}/loaiphong"
-           class="my-btn col-md-4 mb-3 btn bg-light btn-lg btn-block">
-
-            Quản
-            lý Loại
-            Phòng</a>
-        <a href="${pageContext.request.contextPath}/phong"
-           class="my-btn col-md-4 mb-3 btn bg-light btn-lg btn-block">Quản
-            lý
-            Phòng</a>
-        <a href="${pageContext.request.contextPath}/khachhang"
-           class="my-btn col-md-4 mb-3 btn bg-light btn-lg btn-block">Quản
-            lý
-            Khách Hàng</a>
+        <div class="col-md-10 mb-4"></div>
     </div>
 
-    <div class="row mt-3">
-        <a href="${pageContext.request.contextPath}/hoadon"
-           class="my-btn col-md-4 mb-3 btn bg-light btn-lg btn-block">Quản
-            lý Hóa
-            Đơn</a>
-        <a href="${pageContext.request.contextPath}/dichvu"
-           class="my-btn col-md-4 mb-3 btn bg-light btn-lg btn-block">Quản
-            lý Dịch
-            Vụ</a>
-        <a href="${pageContext.request.contextPath}/chitietdichvu"
-           class="my-btn col-md-4 mb-3 btn bg-light btn-lg btn-block">Quản lý
-            Chi Tiết Dịch Vụ</a>
-    </div>
-
-    <div class="row mt-3">
-        <a href="${pageContext.request.contextPath}/phieuthuephong"
-           class="my-btn col-md-4 mb-3 btn bg-light btn-lg btn-block">Quản lý
-            Phiếu Thuê Phòng</a>
-        <!-- Add more buttons as needed for other functionalities -->
-    </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-  const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-  const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
-</script>
 </body>
 </html>
