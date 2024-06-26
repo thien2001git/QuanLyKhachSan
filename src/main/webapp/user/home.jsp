@@ -123,8 +123,8 @@
                                         <select name="contact[Style]" class="form-control  form-control-lg"
                                                 style="background-image: url(//bizweb.dktcdn.net/100/467/686/themes/881628/assets/dropdown.png?1667450085862); background-color: #fff!important;">
                                             <option selected="" disabled="">Kiểu phòng</option>
-                                            <option value="Phòng đơn">Phòng đơn</option>
-                                            <option value="Phòng đôi">Phòng đôi</option>
+                                            <option value="Phong don">Phòng đơn</option>
+                                            <option value="Phong doi">Phòng đôi</option>
                                         </select>
                                     </fieldset>
                                 </div>
@@ -134,13 +134,11 @@
                                     <div class="input-group">
 
                                         <input class="tourmaster-datepicker hasDatepicker" id="datesss"
-                                               name="properties[Ngày]" type="text" placeholder="Ngày"
-                                               data-date-format="dd MM yyyy" readonly="readonly">
-                                        <span class="input-group-addon"><i class="fa fa-calendar"
-                                                                           aria-hidden="true"></i></span>
+                                               name="properties[Ngay]" type="date"
+                                               data-date-format="dd MM yyyy">
                                     </div>
                                     <div class="input-group">
-                                        <select name="properties[Giờ]" id="guiest_id1" class="select-drop"
+                                        <select name="properties[Gio]" id="guiest_id1" class="select-drop"
                                                 style="background-image: url(//bizweb.dktcdn.net/100/467/686/themes/881628/assets/hour.png?1667450085862); background-color: #fff!important;">
                                             <option selected="" disabled="">Giờ</option>
                                             <option value="8h">0 AM</option>
