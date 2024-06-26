@@ -118,7 +118,7 @@
 
                             </li>
                             <li><span>hoặc</span></li>
-                            <li><a href="${pageContext.request.contextPath}/account/register">Đăng ký</a>
+                            <li><a href="${pageContext.request.contextPath}/dangky">Đăng ký</a>
                             </li>
 
 
@@ -205,11 +205,11 @@
                                 <ul class="list-inline">
 
                                     <li>
-                                        <a href="${pageContext.request.contextPath}/account/login"><i class="fa fa-user"></i> Đăng nhập</a>
+                                        <a href="${pageContext.request.contextPath}/dangnhap"><i class="fa fa-user"></i> Đăng nhập</a>
 
                                     </li>
 
-                                    <li><a href="${pageContext.request.contextPath}/account/register"><i class="fa  fa-lock"></i> Đăng ký</a>
+                                    <li><a href="${pageContext.request.contextPath}/dangky"><i class="fa  fa-lock"></i> Đăng ký</a>
                                     </li>
 
                                 </ul>
