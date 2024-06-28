@@ -73,7 +73,8 @@ public class DatPhong extends HttpServlet {
             if (list == null) {
                 list = new ArrayList<>();
             }
-            CartItem cartItem = new CartItem(ngay, gio, maPhong, khachHang);
+            Phong phong = phongService.getPhongById(maPhong);
+            CartItem cartItem = new CartItem(ngay, gio, maPhong, khachHang.getMaKhachHang(), phong.getHinhAnh());
             list.add(cartItem);
             session.setAttribute("cartItemList", list);
             session.setAttribute("CartItemListSize", list.size());

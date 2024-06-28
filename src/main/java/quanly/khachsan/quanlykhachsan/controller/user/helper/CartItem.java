@@ -8,18 +8,19 @@ public class CartItem {
     Long id;
     boolean status = false;
     String ngay, gio, maPhong;
-    String khachHang;
+    String khachHang, img;
 
     public CartItem(Long id) {
         this.id = id;
     }
 
-    public CartItem(String ngay, String gio, String maPhong, KhachHang khachHang) {
+    public CartItem(String ngay, String gio, String maPhong, String khachHang, String img) {
         id = System.currentTimeMillis();
         this.ngay = ngay;
         this.gio = gio;
         this.maPhong = maPhong;
-        this.khachHang = khachHang.getMaKhachHang();
+        this.khachHang = khachHang;
+        this.img = img;
     }
 
     @Override
@@ -44,6 +45,14 @@ public class CartItem {
     @Override
     public int hashCode() {
         return Objects.hash(id);
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
     }
 
     public boolean isStatus() {

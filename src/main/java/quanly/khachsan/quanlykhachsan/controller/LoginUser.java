@@ -3,8 +3,10 @@ package quanly.khachsan.quanlykhachsan.controller;
 import quanly.khachsan.quanlykhachsan.controller.user.helper.CartItem;
 import quanly.khachsan.quanlykhachsan.model.KhachHang;
 import quanly.khachsan.quanlykhachsan.model.PhieuThuePhong;
+import quanly.khachsan.quanlykhachsan.model.Phong;
 import quanly.khachsan.quanlykhachsan.service.KhachHangService;
 import quanly.khachsan.quanlykhachsan.service.PhieuThuePhongService;
+import quanly.khachsan.quanlykhachsan.service.PhongService;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -27,6 +29,7 @@ public class LoginUser extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private KhachHangService khachHangService = new KhachHangService();
     PhieuThuePhongService phieuThuePhongService = new PhieuThuePhongService();
+    PhongService phongService = new PhongService();
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -62,7 +65,8 @@ public class LoginUser extends HttpServlet {
                 Date date = new Date(phieuThuePhong.getNgayDen().getTime());
                 SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
                 String ngay = simpleDateFormat.format(date);
-                CartItem cartItem = new CartItem(ngay, "12h", phieuThuePhong.getMaPhong(), khachHang);
+                Phong phong = phongService.getPhongById(phieuThuePhong.getMaPhong());
+                CartItem cartItem = new CartItem(ngay, "12h", phieuThuePhong.getMaPhong(), khachHang.getMaKhachHang(), phong.getHinhAnh());
                 cartItem.setStatus(true);
                 list1.add(cartItem);
             }

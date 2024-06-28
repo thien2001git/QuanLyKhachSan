@@ -82,13 +82,16 @@
                                     <c:forEach var="cartItem" items="${cartItemList}">
 
                                         <li>
+                                            <img src="${cartItem.img}" height="20" width="20">
                                             Ngày: ${cartItem.ngay}, Giờ: ${cartItem.gio},
                                             Phòng: ${cartItem.maPhong}, <span
                                                 style="color: ${cartItem.status ? "green" : "red"}">${cartItem.status ? "Đã đặt" : "Chưa đặt"}</span>
                                         </li>
-                                        <li>
-                                            <a href="${pageContext.request.contextPath}/dat-phong?cartId=${cartItem.id}">Đặt
-                                                phòng</a></li>
+                                        <c:if test="${cartItem.status == false}">
+                                            <li>
+                                                <a href="${pageContext.request.contextPath}/dat-phong?cartId=${cartItem.id}">Đặt
+                                                    phòng</a></li>
+                                        </c:if>
                                     </c:forEach>
                                 </ul>
                             </c:if>
