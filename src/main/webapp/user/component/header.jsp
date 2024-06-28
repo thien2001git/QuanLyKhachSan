@@ -1,11 +1,9 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Admin
-  Date: 6/22/2024
-  Time: 9:46 PM
-  To change this template use File | Settings | File Templates.
---%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="quanly.khachsan.quanlykhachsan.controller.user.helper.CartItem" %>
+<%@ page import="java.util.Optional" %>
+<%@ page import="javax.servlet.http.HttpSession" %>
+<%@ page import="java.io.*,java.util.*,javax.servlet.*" %>
 <header class="header">
 
 
@@ -64,16 +62,42 @@
                                     <img src="//bizweb.dktcdn.net/100/467/686/themes/881628/assets/icon-cart.png?1667450085862"
                                          data-lazyload="//bizweb.dktcdn.net/100/467/686/themes/881628/assets/icon-cart.png?1667450085862"
                                          alt="cart">
-                                    <span class="cartCount count_item_pr" id="cart-total">0</span>
+
+                                    <c:if test="${CartItemListSize != null}">
+                                        <span class="cartCount count_item_pr" id="cart-total"><c:out
+                                                value="${CartItemListSize}"/></span>
+                                    </c:if>
+                                    <c:if test="${CartItemListSize == null}">
+                                        <span class="cartCount count_item_pr" id="cart-total">0</span>
+                                    </c:if>
+
                                 </div>
 
 
                             </a>
                         </div>
                         <div class="top-cart-content">
-                            <ul id="cart-sidebar" class="mini-products-list count_li">
-                                <div class="no-item"><p>Bạn chưa chọn phòng nào.</p></div>
-                            </ul>
+                            <c:if test="${CartItemListSize != null}">
+                                <ul id="cart-sidebar" class="mini-products-list count_li">
+                                    <c:forEach var="cartItem" items="${cartItemList}">
+
+                                        <li>
+                                            Ngày: ${cartItem.ngay}, Giờ: ${cartItem.gio},
+                                            Phòng: ${cartItem.maPhong}, <span
+                                                style="color: ${cartItem.status ? "green" : "red"}">${cartItem.status ? "Đã đặt" : "Chưa đặt"}</span>
+                                        </li>
+                                        <li>
+                                            <a href="${pageContext.request.contextPath}/dat-phong?cartId=${cartItem.id}">Đặt
+                                                phòng</a></li>
+                                    </c:forEach>
+                                </ul>
+                            </c:if>
+                            <c:if test="${CartItemListSize == null}">
+                                <ul id="cart-sidebar" class="mini-products-list count_li">
+                                    <div class="no-item"><p>Bạn chưa chọn phòng nào.</p></div>
+                                </ul>
+                            </c:if>
+
                         </div>
                     </div>
                 </div>
@@ -83,7 +107,8 @@
                         <button class="btn icon-fallback-text hidden-lg hidden-md hidden-sm">
                             <i class="fa fa-search"></i>
                         </button>
-                        <form class="input-group search-bar search_form" action="${pageContext.request.contextPath}/search" method="get" role="search">
+                        <form class="input-group search-bar search_form"
+                              action="${pageContext.request.contextPath}/search" method="get" role="search">
                             <input type="search" name="query" value="" placeholder="Tìm kiếm"
                                    class="input-group-field st-default-search-input search-text" autocomplete="off">
                             <span class="input-group-btn">
@@ -114,7 +139,8 @@
                         <ul class="list-inline">
 
                             <li>
-                                <a href="${pageContext.request.contextPath}/dangnhap"><i class="fa fa-user"></i> Đăng nhập</a>
+                                <a href="${pageContext.request.contextPath}/dangnhap"><i class="fa fa-user"></i> Đăng
+                                    nhập</a>
 
                             </li>
                             <li><span>hoặc</span></li>
@@ -150,19 +176,24 @@
                         </li>
 
 
-                        <li class="nav-item active"><a class="nav-link" href="${pageContext.request.contextPath}/">Trang chủ</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="${pageContext.request.contextPath}/">Trang
+                            chủ</a></li>
 
 
-                        <li class="nav-item "><a class="nav-link" href="${pageContext.request.contextPath}/gioi-thieu">Giới thiệu</a></li>
+                        <li class="nav-item "><a class="nav-link" href="${pageContext.request.contextPath}/gioi-thieu">Giới
+                            thiệu</a></li>
 
 
-                        <li class="nav-item "><a class="nav-link" href="${pageContext.request.contextPath}/collections">Sản phẩm</a></li>
+                        <li class="nav-item "><a class="nav-link" href="${pageContext.request.contextPath}/collections">Sản
+                            phẩm</a></li>
 
 
-                        <li class="nav-item "><a class="nav-link" href="${pageContext.request.contextPath}/tin-tuc">Tin tức</a></li>
+                        <li class="nav-item "><a class="nav-link" href="${pageContext.request.contextPath}/tin-tuc">Tin
+                            tức</a></li>
 
 
-                        <li class="nav-item "><a class="nav-link" href="${pageContext.request.contextPath}/lien-he">Liên hệ</a></li>
+                        <li class="nav-item "><a class="nav-link" href="${pageContext.request.contextPath}/lien-he">Liên
+                            hệ</a></li>
 
 
                     </ul>
@@ -185,19 +216,29 @@
                             <ul class="nav nav-left">
 
 
-                                <li class="nav-item active"><a class="nav-link" href="${pageContext.request.contextPath}/">Trang chủ</a></li>
+                                <li class="nav-item active"><a class="nav-link"
+                                                               href="${pageContext.request.contextPath}/">Trang chủ</a>
+                                </li>
 
 
-                                <li class="nav-item "><a class="nav-link" href="${pageContext.request.contextPath}/gioi-thieu">Giới thiệu</a></li>
+                                <li class="nav-item "><a class="nav-link"
+                                                         href="${pageContext.request.contextPath}/gioi-thieu">Giới
+                                    thiệu</a></li>
 
 
-                                <li class="nav-item "><a class="nav-link" href="${pageContext.request.contextPath}/collections">Sản phẩm</a></li>
+                                <li class="nav-item "><a class="nav-link"
+                                                         href="${pageContext.request.contextPath}/collections">Sản
+                                    phẩm</a></li>
 
 
-                                <li class="nav-item "><a class="nav-link" href="${pageContext.request.contextPath}/tin-tuc">Tin tức</a></li>
+                                <li class="nav-item "><a class="nav-link"
+                                                         href="${pageContext.request.contextPath}/tin-tuc">Tin tức</a>
+                                </li>
 
 
-                                <li class="nav-item "><a class="nav-link" href="${pageContext.request.contextPath}/lien-he">Liên hệ</a></li>
+                                <li class="nav-item "><a class="nav-link"
+                                                         href="${pageContext.request.contextPath}/lien-he">Liên hệ</a>
+                                </li>
 
 
                             </ul>
@@ -205,11 +246,13 @@
                                 <ul class="list-inline">
 
                                     <li>
-                                        <a href="${pageContext.request.contextPath}/dangnhap"><i class="fa fa-user"></i> Đăng nhập</a>
+                                        <a href="${pageContext.request.contextPath}/dangnhap"><i class="fa fa-user"></i>
+                                            Đăng nhập</a>
 
                                     </li>
 
-                                    <li><a href="${pageContext.request.contextPath}/dangky"><i class="fa  fa-lock"></i> Đăng ký</a>
+                                    <li><a href="${pageContext.request.contextPath}/dangky"><i class="fa  fa-lock"></i>
+                                        Đăng ký</a>
                                     </li>
 
                                 </ul>

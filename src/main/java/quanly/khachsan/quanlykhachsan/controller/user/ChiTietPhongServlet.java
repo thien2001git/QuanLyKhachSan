@@ -9,9 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.List;
 
 @WebServlet("/chi-tiet-phong")
 public class ChiTietPhongServlet extends HttpServlet {
@@ -38,11 +36,5 @@ public class ChiTietPhongServlet extends HttpServlet {
         request.setAttribute("phong", phong);
         request.getRequestDispatcher("user/chitietphong.jsp").forward(request, response);
     }
-
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-
-    }
-
 
 }

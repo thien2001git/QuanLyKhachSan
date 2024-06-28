@@ -15,4 +15,6 @@ public class PhieuThuePhongService {
 	public List<PhieuThuePhong> getAllPhieuThuePhong() {
 		return phieuThuePhongDAO.getAllPhieuThuePhong();
 	}
+
+    public boolean addPhieu(PhieuThuePhong phieuThuePhong) {return  phieuThuePhongDAO.addPhieu(phieuThuePhong);}
 }

@@ -6,6 +6,7 @@ import quanly.khachsan.quanlykhachsan.model.PhieuThuePhong;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,5 +29,21 @@ public class PhieuThuePhongDAO {
             e.printStackTrace();
         }
         return phieuThuePhongs;
+    }
+
+    public boolean addPhieu(PhieuThuePhong phieuThuePhong) {
+        String sql = "INSERT INTO `quanlykhachsan`.`phieuthuephong` (`MaPhieuThuePhong`, `MaPhong`, `MaKhachHang`, `NgayDen`, `TienCoc`) VALUES (?, ?, ?, ?, ?);";
+        try (Connection conn = MyConnection.getConnection(); PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setString(1, phieuThuePhong.getMaPhieuThuePhong());
+            ps.setString(2, phieuThuePhong.getMaPhong());
+            ps.setString(3, phieuThuePhong.getMaKhachHang());
+            ps.setDate(4, phieuThuePhong.getNgayDen());
+            ps.setFloat(5, phieuThuePhong.getTienCoc());
+
+            return ps.executeUpdate() > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 }

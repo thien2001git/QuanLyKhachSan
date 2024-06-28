@@ -98,4 +98,19 @@ public class KhachHang {
 	public void setSoDienThoai(String soDienThoai) {
 		this.soDienThoai = soDienThoai;
 	}
+
+    @Override
+    public String toString() {
+        return "KhachHang{" +
+                "maKhachHang='" + maKhachHang + '\'' +
+                ", taiKhoan='" + taiKhoan + '\'' +
+                ", matKhau='" + matKhau + '\'' +
+                ", tenKhachHang='" + tenKhachHang + '\'' +
+                ", gioiTinh=" + gioiTinh +
+                ", cmnd='" + cmnd + '\'' +
+                ", diaChi='" + diaChi + '\'' +
+                ", email='" + email + '\'' +
+                ", soDienThoai='" + soDienThoai + '\'' +
+                '}';
+    }
 }

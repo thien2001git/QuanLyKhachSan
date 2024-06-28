@@ -6,6 +6,12 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="quanly.khachsan.quanlykhachsan.model.KhachHang" %>
+<%@ page import="quanly.khachsan.quanlykhachsan.model.Phong" %>
+<%@ page import="java.util.Optional" %>
+<%@ page import="javax.servlet.http.HttpSession" %>
+<%@ page import="java.io.*,java.util.*,javax.servlet.*" %>
 <!DOCTYPE html>
 <html lang="vi" class="mdl-js">
 <jsp:include page="component/head.jsp"/>
@@ -36,7 +42,7 @@
         </div>
     </div>
 </section>
-<section class="product" >
+<section class="product">
 
     <div class="container">
         <div class="row">
@@ -87,14 +93,15 @@
 
 
                             <div class="form-product ">
-                                <form enctype="multipart/form-data" id="add-to-cart-form" action="/cart/add"
+                                <form id="add-to-cart-form"
+                                      action="${pageContext.request.contextPath}/dat-phong"
                                       method="post" class="form-inline margin-bottom-10 dqdt-form">
 
 
                                     <div class="box-variant clearfix ">
 
 
-                                        <input type="hidden" name="variantId" value="74237713">
+                                        <input type="hidden" name="maPhong" value="${phong.maPhong}">
 
 
                                     </div>
@@ -109,7 +116,7 @@
                                                        data-date-format="dd MM yyyy">
                                             </div>
                                             <div class="input-group">
-                                                <select name="properties[Giờ]" id="guiest_id1" class="select-drop"
+                                                <select name="properties[Gio]" id="guiest_id1" class="select-drop"
                                                         sb="24794028"
                                                         style="    background-image: url(//bizweb.dktcdn.net/100/467/686/themes/881628/assets/hour.png?1667450085862); background-color: #fff!important;">
                                                     <option selected="" disabled="">Chọn giờ</option>
@@ -126,30 +133,24 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <c:if test="${err != null}">
+                                        <div style="color: red">${err}</div>
+                                    </c:if>
+                                    <c:if test="${khachHang != null}">
+                                        <input type="submit"
+                                               class="btn btn-lg btn-primary"
+                                               title="Cho vào giỏ hàng" value="Đặt phòng ngay">
 
 
-                                    <div class="form-group form-groupx form-detail-action clearfix hidden">
-                                        <label class="f-left">Số lượng: </label>
-                                        <div class="custom custom-btn-number">
-
-                                            <span class="qtyminus" data-field="quantity"><i
-                                                    class="fa fa-minus-square"></i></span>
-                                            <input type="text" class="input-text qty" data-field="quantity"
-                                                   title="Só lượng" value="1" maxlength="12" id="qty" name="quantity"
-                                                   onkeypress="if ( isNaN(this.value + String.fromCharCode(event.keyCode) )) return false;"
-                                                   onchange="if(this.value == '')this.value=1;">
-                                            <span class="qtyplus" data-field="quantity"><i
-                                                    class="fa fa-plus-square"></i></span>
-                                        </div>
-
+                                    </c:if>
+                                    <c:if test="${khachHang == null}">
                                         <button type="submit"
-                                                class="hidden btn btn-lg btn-primary btn-cart btn-cart2  btn_buy add_to_cart2"
-                                                title="Cho vào giỏ hàng">
-                                            <span>Đặt phòng ngay  <i class="fa .fa-caret-right"></i></span>
+                                                class="btn btn-lg btn-primary btn-cart btn-cart2  btn_buy add_to_cart2"
+                                                title="Cho vào giỏ hàng" disabled>
+                                            <span>Hãy đăng nhập! <i class="fa .fa-caret-right"></i></span>
                                         </button>
+                                    </c:if>
 
-
-                                    </div>
                                 </form>
                             </div>
                         </div>
