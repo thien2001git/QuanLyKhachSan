@@ -30,7 +30,7 @@
                     <div class="mb-3">
                         <label for="maPhieuThuePhong" class="form-label">Mã phiếu thuê phòng:</label>
                         <select id="maPhieuThuePhong" name="maPhieuThuePhong" class="form-select" required>
-                            <c:forEach items="${maPhieuThuePhongList}" var="maPhieuThuePhong">
+                            <c:forEach var="maPhieuThuePhong" items="${maPhieuThuePhongList}">
                                 <option value="${maPhieuThuePhong}">${maPhieuThuePhong}</option>
                             </c:forEach>
                         </select>

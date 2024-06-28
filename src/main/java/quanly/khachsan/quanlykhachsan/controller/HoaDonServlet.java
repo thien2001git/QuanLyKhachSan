@@ -98,7 +98,7 @@ public class HoaDonServlet extends HttpServlet {
 	private void showCreateForm(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		List<String> availablePhieuThuePhongList = hoaDonService.getAvailablePhieuThuePhong();
-		request.setAttribute("availablePhieuThuePhongList", availablePhieuThuePhongList);
+		request.setAttribute("maPhieuThuePhongList", availablePhieuThuePhongList);
 		request.getRequestDispatcher("admin/hoadon/addhoadon.jsp").forward(request, response);
 	}
 
