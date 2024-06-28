@@ -128,7 +128,7 @@ public class PhongServlet extends HttpServlet {
 		String hinhAnh = request.getParameter("hinhAnh");
 		int sucChua = Integer.parseInt(request.getParameter("sucChua"));
 		float donGia = Float.parseFloat(request.getParameter("donGia"));
-		String moTa = request.getParameter("moTa");
+        String moTa = new String(request.getParameter("moTa").getBytes("iso-8859-1"), "utf-8");
 		boolean tinhTrang = Boolean.parseBoolean(request.getParameter("tinhTrang"));
 
 		Phong phong = new Phong(maPhong, maLoaiPhong, tenPhong, hinhAnh, sucChua, donGia, moTa, tinhTrang);
