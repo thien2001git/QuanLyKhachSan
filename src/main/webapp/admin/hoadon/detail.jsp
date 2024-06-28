@@ -34,7 +34,7 @@
                         <p><strong>Ngày đến:</strong> ${chiTietHoaDon.ngayDen}</p>
                         <p><strong>Ngày thanh toán:</strong> ${chiTietHoaDon.ngayThanhToan}</p>
                         <p><strong>Tiền cọc:</strong> ${chiTietHoaDon.tienCoc} VNĐ</p>
-                        <p><strong>Tổng tiền:</strong> ${chiTietHoaDon.tongTien} VNĐ</p>
+                        <p><strong>Tổng tiền:</strong> ${chiTietHoaDon.tongTiena} VNĐ</p>
                     </div>
                 </div>
                 <a href="hoadon" class="btn btn-secondary">Quay lại danh sách hóa đơn</a>
