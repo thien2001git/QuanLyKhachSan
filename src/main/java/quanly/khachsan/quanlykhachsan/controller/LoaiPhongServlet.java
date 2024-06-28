@@ -117,8 +117,8 @@ public class LoaiPhongServlet extends HttpServlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		String maLoaiPhong = request.getParameter("maLoaiPhong");
-		String tenLoaiPhong = request.getParameter("tenLoaiPhong");
-		String moTa = request.getParameter("moTa");
+		String tenLoaiPhong = new String(request.getParameter("tenLoaiPhong").getBytes("iso-8859-1"), "utf-8");
+		String moTa = new String(request.getParameter("moTa").getBytes("iso-8859-1"), "utf-8");
 
 		LoaiPhong loaiPhong = new LoaiPhong(maLoaiPhong, tenLoaiPhong, moTa);
 
