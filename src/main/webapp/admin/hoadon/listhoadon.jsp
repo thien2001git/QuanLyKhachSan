@@ -18,6 +18,7 @@
         <div class="col-md-10 mb-4">
             <div class="container mt-5">
                 <h1 class="mb-4">Danh sách hóa đơn</h1>
+                <a href="${pageContext.request.contextPath}/download" download target="_blank" class="btn btn-primary mb-3">Report</a>
                 <a href="hoadon?action=create" class="btn btn-primary mb-3">Tạo hóa đơn mới</a>
                 <table class="table table-bordered">
                     <thead>

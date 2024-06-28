@@ -91,6 +91,11 @@
                             hỗ trợ bạn ngay
                         </p>
                     </div>
+
+                    <c:if test="${khachHang != null}">
+
+                    </c:if>
+
                     <form accept-charset="UTF-8" action="${pageContext.request.contextPath}/contact" id="contact" method="post">
                         <input name="FormType" type="hidden" value="contact">
                         <input name="utf8" type="hidden" value="true">
@@ -99,25 +104,37 @@
                         <p id="errorFills" style="margin-bottom:10px; color: red;"></p>
                         <div id="emtry_contact" class="form-signup form_contact clearfix">
                             <div class="row row-8Gutter">
-                                <div class="col-md-12">
-                                    <fieldset class="form-group">
-                                        <input type="text" placeholder="Họ tên*" name="contact[name]" id="name"
-                                               class="form-control  form-control-lg" required="">
-                                    </fieldset>
-                                </div>
-                                <div class="col-md-12 hidden">
-                                    <fieldset class="form-group">
-                                        <input type="hidden" value="hidden@email.com" name="contact[email]"
-                                               data-validation="email" id="email" class="form-control form-control-lg">
-                                    </fieldset>
-                                </div>
+                                <c:if test="${khachHang != null}">
+                                    <div class="col-md-12">
+                                        <fieldset class="form-group">
+                                            <input type="text" placeholder="Họ tên*" name="contact[name]" id="name"
+                                                   class="form-control  form-control-lg" required="" disabled="disabled" value="${khachHang.tenKhachHang}">
+                                        </fieldset>
+                                    </div>
 
-                                <div class="col-md-12">
-                                    <fieldset class="form-group">
-                                        <input type="number" placeholder="Điện thoại*" name="contact[phone]"
-                                               class="form-control form-control-lg" required="">
-                                    </fieldset>
-                                </div>
+                                    <div class="col-md-12">
+                                        <fieldset class="form-group">
+                                            <input type="number" placeholder="Điện thoại*" name="contact[phone]"
+                                                   class="form-control form-control-lg" required="" disabled="disabled" value="${khachHang.soDienThoai}">
+                                        </fieldset>
+                                    </div>
+                                </c:if>
+                                <c:if test="${khachHang == null}">
+                                    <div class="col-md-12">
+                                        <fieldset class="form-group">
+                                            <input type="text" placeholder="Họ tên*" name="contact[name]" id="name"
+                                                   class="form-control  form-control-lg" required="">
+                                        </fieldset>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <fieldset class="form-group">
+                                            <input type="number" placeholder="Điện thoại*" name="contact[phone]"
+                                                   class="form-control form-control-lg" required="">
+                                        </fieldset>
+                                    </div>
+                                </c:if>
+
                                 <div class="col-md-12">
                                     <fieldset class="form-group">
                                         <select name="contact[Style]" class="form-control  form-control-lg"
@@ -193,6 +210,113 @@
     </div>
 </section>
 
+<div class="container">
+
+    <div class="row">
+        <section class="main_container collection col-lg-12">
+
+            <div class="category-products products">
+
+
+                <section class="products-view products-view-grid">
+                    <div class="row">
+
+                        <c:forEach var="phong" items="${listPhongs}">
+                            <%--                            <tr>--%>
+                            <%--                                <td class="center-align">${phong.maPhong}</td>--%>
+                            <%--                                <td class="center-align">${phong.maLoaiPhong}</td>--%>
+                            <%--                                <td class="center-align">${phong.tenPhong}</td>--%>
+                            <%--                                <td class="center-align">--%>
+                            <%--                                    <img src="${phong.hinhAnh}" alt="Hình ảnh phòng"--%>
+                            <%--                                         style="width: 100px; height: 100px;">--%>
+                            <%--                                </td>--%>
+                            <%--                                <td class="center-align">${phong.sucChua}</td>--%>
+                            <%--                                <td class="center-align">${phong.donGia}</td>--%>
+                            <%--                                <td class="center-align">${phong.moTa}</td>--%>
+                            <%--                                <td class="center-align">${phong.tinhTrang ? "Có sẵn" : "Đã đặt"}</td>--%>
+                            <%--                                <td class="center-align">--%>
+                            <%--                                    <a href="${pageContext.request.contextPath}/phong?action=edit&maPhong=${phong.maPhong}"--%>
+                            <%--                                       class="btn btn-warning btn-sm">Sửa</a>--%>
+                            <%--                                    <a href="${pageContext.request.contextPath}/phong?action=delete&maPhong=${phong.maPhong}"--%>
+                            <%--                                       class="btn btn-danger btn-sm">Xóa</a>--%>
+                            <%--                                </td>--%>
+                            <%--                            </tr>--%>
+
+                            <div class="col-xs-6 col-xss-12 col-sm-4 col-md-4 col-lg-4">
+
+
+                                <div class="product-box">
+                                    <div class="product-thumbnail flexbox-grid">
+                                        <a href="${pageContext.request.contextPath}/chi-tiet-phong?action=view&maPhong=${phong.maPhong}" title="Ưu đãi đặc biệt">
+                                            <img src="${phong.hinhAnh}"
+                                                 data-lazyload="${phong.hinhAnh}"
+                                                 alt="Ưu đãi đặc biệt">
+                                        </a>
+
+
+                                        <div class="product-action hidden-md hidden-sm hidden-xs clearfix">
+                                            <form action="/cart/add" method="post"
+                                                  class="variants form-nut-grid margin-bottom-0"
+                                                  data-id="product-actions-28225551" enctype="multipart/form-data">
+                                                <div>
+
+                                                    <a href="/uu-dai-dac-biet" data-handle="uu-dai-dac-biet"
+                                                       class="btn-gray btn_view btn right-to quick-view">
+                                                        <i class="fa fa-compress"></i></a>
+
+
+                                                </div>
+                                            </form>
+                                        </div>
+
+
+                                        <div class="price">
+
+                                            <div class="price-box clearfix">
+                                                <div class="special-price clearfix">
+                                                    <span class="price product-price">${phong.donGia} vnd</span>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="product-info a-left">
+                                        <div class="review">
+
+
+                                            <span class="rv">${phong.tinhTrang ? "Có sẵn" : "Đã đặt"} <i>${phong.maPhong}</i></span>
+                                            <span class="count">${phong.sucChua}</span>
+
+
+                                        </div>
+                                        <h3 class="product-name">
+                                            <a href="${pageContext.request.contextPath}/chi-tiet-phong?action=view&maPhong=${phong.maPhong}" title="Ưu đãi đặc biệt">
+                                                    ${phong.tenPhong}
+                                            </a>
+                                        </h3>
+
+                                        <div class="product-summary margin-top-10">
+                                                ${phong.moTa}
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </c:forEach>
+
+
+                    </div>
+                    <div class="text-xs-right">
+
+                    </div>
+                </section>
+
+            </div>
+        </section>
+    </div>
+</div>
 
 <section class="awe-section-2">
     <div class="section section-policy">

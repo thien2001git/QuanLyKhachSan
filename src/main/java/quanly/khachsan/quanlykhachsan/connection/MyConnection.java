@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class MyConnection {
-	private static String jdbcURL = "jdbc:mysql://localhost:3306/QuanLyKhachSan?useSSL=false";
+	private static String jdbcURL = "jdbc:mysql://localhost:3306/QuanLyKhachSan?allowPublicKeyRetrieval=true&useSSL=false";
 	private static String jdbcUsername = "hxt";
 	private static String jdbcPassword = "123456";
 

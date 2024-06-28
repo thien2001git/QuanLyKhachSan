@@ -10,7 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.sql.Date;
 import java.util.List;
 
@@ -80,6 +82,15 @@ public class HoaDonServlet extends HttpServlet {
 	private void displayAllHoaDon(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		List<HoaDon> hoaDonList = hoaDonService.getAllHoaDon();
+        StringBuffer stringBuffer = new StringBuffer();
+        stringBuffer.append("maHoaDon,ngayThanhToan,maPhieuThuePhong,tongTien\n");
+        for(HoaDon hoaDon: hoaDonList) {
+            stringBuffer.append(String.format("%s,%s,%s,%f\n",hoaDon.getMaHoaDon(),hoaDon.getNgayThanhToan(),hoaDon.getMaPhieuThuePhong(), hoaDon.getTongTien()));
+        }
+        String path = "D:\\Code\\.java\\QuanLyKhachSan\\report\\report.csv";
+        File file = new File(path);
+        Files.write(file.toPath(), stringBuffer.toString().getBytes());
+        request.getSession().setAttribute("hoaDon", path);
 		request.setAttribute("hoaDonList", hoaDonList);
 		request.getRequestDispatcher("admin/hoadon/listhoadon.jsp").forward(request, response);
 	}
