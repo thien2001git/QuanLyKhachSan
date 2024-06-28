@@ -15,6 +15,7 @@ public class ChiTietHoaDon {
 	private Date ngayThanhToan;
 	private float tienCoc;
 	private float tongTien;
+    String tongTiena;
 
 	public ChiTietHoaDon() {
 		super();
@@ -37,9 +38,19 @@ public class ChiTietHoaDon {
 		this.tienCoc = tienCoc;
 
 		this.tongTien = tongTien;
+        tongTiena = String.format("%.2f", tongTien);
 	}
 
-	public String getMaHoaDon() {
+    public String getTongTiena() {
+        tongTiena = String.format("%.2f", tongTien);
+        return tongTiena;
+    }
+
+    public void setTongTiena(String tongTiena) {
+        this.tongTiena = tongTiena;
+    }
+
+    public String getMaHoaDon() {
 		return maHoaDon;
 	}
 

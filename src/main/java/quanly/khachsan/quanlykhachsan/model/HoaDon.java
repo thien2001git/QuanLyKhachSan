@@ -18,7 +18,7 @@ public class HoaDon {
 		this.ngayThanhToan = ngayThanhToan;
 		this.maPhieuThuePhong = maPhieuThuePhong;
 		this.tongTien = tongTien;
-
+        tongTiena = String.format("%.2f", tongTien);
 	}
 
     public String getTongTiena() {
