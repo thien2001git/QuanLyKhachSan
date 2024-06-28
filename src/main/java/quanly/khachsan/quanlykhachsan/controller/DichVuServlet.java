@@ -94,7 +94,7 @@ public class DichVuServlet extends HttpServlet {
 	private void addDichVu(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String maDichVu = request.getParameter("maDichVu");
-		String tenDichVu = request.getParameter("tenDichVu");
+		String tenDichVu = new String(request.getParameter("tenDichVu").getBytes("iso-8859-1"), "utf-8");
 		float giaTien = Float.parseFloat(request.getParameter("giaTien"));
 
 		DichVu dichVu = new DichVu(maDichVu, tenDichVu, giaTien);
@@ -109,7 +109,7 @@ public class DichVuServlet extends HttpServlet {
 	private void updateDichVu(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String maDichVu = request.getParameter("maDichVu");
-		String tenDichVu = request.getParameter("tenDichVu");
+		String tenDichVu = new String(request.getParameter("tenDichVu").getBytes("iso-8859-1"), "utf-8");
 		float giaTien = Float.parseFloat(request.getParameter("giaTien"));
 
 		DichVu dichVu = new DichVu(maDichVu, tenDichVu, giaTien);

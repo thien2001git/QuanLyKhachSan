@@ -57,8 +57,8 @@
                                 <a href="${phong.hinhAnh}"
                                    data-fancybox="images">
                                     <img id="zoom_01"
-                                         src="//bizweb.dktcdn.net/thumb/grande/100/467/686/products/5e75d76d3fcd4cc881f69202475c17ca.png?v=1666759455543"
-                                         data-lazyload="//bizweb.dktcdn.net/thumb/grande/100/467/686/products/5e75d76d3fcd4cc881f69202475c17ca.png?v=1666759455543"
+                                         src="${phong.hinhAnh}"
+                                         data-lazyload="${phong.hinhAnh}"
                                          alt="Ưu đãi đặc biệt">
                                 </a>
                                 <div class="hidden">

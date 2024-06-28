@@ -105,7 +105,7 @@ public class KhachHangServlet extends HttpServlet {
 		String tenKhachHang = request.getParameter("tenKhachHang");
 		Boolean gioiTinh = Boolean.parseBoolean(request.getParameter("gioiTinh"));
 		String cmnd = request.getParameter("cmnd");
-		String diaChi = request.getParameter("diaChi");
+		String diaChi = new String(request.getParameter("diaChi").getBytes("iso-8859-1"), "utf-8");
 		String email = request.getParameter("email");
 		String soDienThoai = request.getParameter("soDienThoai");
 
