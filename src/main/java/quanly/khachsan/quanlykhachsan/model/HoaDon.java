@@ -8,6 +8,8 @@ public class HoaDon {
 	private String maPhieuThuePhong;
 	private float tongTien;
 
+    String tongTiena;
+
 	public HoaDon() {
 	}
 
@@ -16,9 +18,19 @@ public class HoaDon {
 		this.ngayThanhToan = ngayThanhToan;
 		this.maPhieuThuePhong = maPhieuThuePhong;
 		this.tongTien = tongTien;
+
 	}
 
-	public String getMaHoaDon() {
+    public String getTongTiena() {
+        tongTiena = String.format("%.2f", tongTien);
+        return tongTiena;
+    }
+
+    public void setTongTiena(String tongTien1) {
+        this.tongTiena = tongTien1;
+    }
+
+    public String getMaHoaDon() {
 		return maHoaDon;
 	}
 

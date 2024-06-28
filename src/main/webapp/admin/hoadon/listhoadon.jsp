@@ -36,7 +36,7 @@
                             <td>${hoaDon.maHoaDon}</td>
                             <td>${hoaDon.ngayThanhToan}</td>
                             <td>${hoaDon.maPhieuThuePhong}</td>
-                            <td>${hoaDon.tongTien}</td>
+                            <td>${hoaDon.tongTiena}</td>
                             <td><a href="hoadon?action=detail&maHoaDon=${hoaDon.maHoaDon}" class="btn btn-primary">Xem
                                 chi tiết</a></td>
                         </tr>
